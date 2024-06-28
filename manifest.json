@@ -1,0 +1,16 @@
+{
+  "name": "Convert to ",
+  "version": "0.1.0",
+  "description": "Converts programming language",
+  "permissions": ["tabs", "contextMenus", "activeTab"],
+  "background": {
+    "service_worker": "dist/background.bundle.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "manifest_version": 3
+}
