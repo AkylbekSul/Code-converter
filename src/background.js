@@ -22,17 +22,14 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
     const selectedText = info.selectionText;
     const targetLanguage = tIdLanguages[info.menuItemId];
     convertCode(tab.id, selectedText, targetLanguage);
-    
-
   }
-
 });
 
 async function convertCode(tabID, selectedText, targetLanguage) {
   
   const genAI = new GoogleGenerativeAI(API_KEY);
   const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro"});
-  const prompt = `Convert me this ${selectedText} to ${targetLanguage}. No need explanation.`;
+  const prompt = `Convert me this code '${selectedText}' to ${targetLanguage}. No need explanation. If it's not a code, then return 'Cannot convert' text`;
   const result = await model.generateContent(prompt);
   const response = result.response;
   const convertedCode = response.text();
