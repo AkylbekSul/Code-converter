@@ -21,11 +21,12 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
   if (info.menuItemId in tIdLanguages) {
     const selectedText = info.selectionText;
     const targetLanguage = tIdLanguages[info.menuItemId];
-    convertCode(tab.id, selectedText, targetLanguage);
+    convertCodeGemini(tab.id, selectedText, targetLanguage);
+    // convertCodeChatGPT();
   }
 });
 
-async function convertCode(tabID, selectedText, targetLanguage) {
+async function convertCodeGemini(tabID, selectedText, targetLanguage) {
   
   const genAI = new GoogleGenerativeAI(API_KEY);
   const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro"});
@@ -38,3 +39,5 @@ async function convertCode(tabID, selectedText, targetLanguage) {
     selectedText: selectedText
   });
 }
+
+async function convertCodeChatGPT(tabID, selectedText, targetLanguage) {};
