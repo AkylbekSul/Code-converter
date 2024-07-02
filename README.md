@@ -29,7 +29,7 @@ git clone https://github.com/yourusername/your-repository.git
 npm install
 ```
 ### 3.Create a .env File
-Create a .env file in the root of the project and add your Gemini API key:
+Create a .env file in the root of the project and add your API key:
 ```
 API_KEY=your_api_key_here
 ```
