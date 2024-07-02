@@ -10,6 +10,9 @@ This is a Chrome extension that allows users to convert selected code snippets i
 - Displays converted code in a modal popup on the webpage.
 - Option to copy converted code to clipboard.
 
+![ScreenRecording2024-07-03at02 45 121-ezgif com-speed](https://github.com/AkylbekSul/Code-converter/assets/47032706/421df698-8f62-424f-ae1a-2205f941b640)
+
+
 ## Prerequisites
 
 - Node.js and npm installed on your machine.
